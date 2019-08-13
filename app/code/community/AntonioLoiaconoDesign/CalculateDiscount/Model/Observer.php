@@ -25,7 +25,7 @@ class AntonioLoiaconoDesign_CalculateDiscount_Model_Observer
         $discountAttribute = Mage::getStoreConfig('antonioloiaconodesign_calculatediscount/general/attributeofdiscount');
         
         if ($product->getFinalPrice() < $product->getPrice() && $product->getVisibility() != Mage_Catalog_Model_Product_Visibility::VISIBILITY_NOT_VISIBLE){
-			$discountPer        = round(($product->getFinalPrice() / $product->getPrice() * 100), 0, PHP_ROUND_HALF_DOWN);
+			$discountPer        = round(($product->getPrice() - $product->getFinalPrice()) / $product->getPrice() * 100, 0, PHP_ROUND_HALF_DOWN);
             $discountConditions = Mage::getStoreConfig('antonioloiaconodesign_calculatediscount/general/discountconditions');
             if ($discountConditions) {
                 $discountConditions = unserialize($discountConditions);

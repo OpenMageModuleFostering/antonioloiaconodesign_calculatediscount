@@ -34,7 +34,7 @@ class AntonioLoiaconoDesign_CalculateDiscount_Adminhtml_CalculatediscountControl
                     
                     if ($product->getFinalPrice() < $product->getPrice()) {
                         
-						$discountPer        = round(($product->getFinalPrice() / $product->getPrice() * 100), 0, PHP_ROUND_HALF_DOWN);
+						$discountPer        = round(($product->getPrice() - $product->getFinalPrice()) / $product->getPrice() * 100, 0, PHP_ROUND_HALF_DOWN);
                         $discountConditions = Mage::getStoreConfig('antonioloiaconodesign_calculatediscount/general/discountconditions');
                         if ($discountConditions) {
                             $discountConditions = unserialize($discountConditions);

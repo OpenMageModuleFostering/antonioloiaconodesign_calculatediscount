@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
 <package>
     <name>AntonioLoiaconoDesign_CalculateDiscount</name>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <stability>stable</stability>
     <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
     <channel>community</channel>
     <extends/>
     <summary>The extension of the calculation discount will be useful to the one who will want to obtain a filter based on the percentage of discount in the frontend.</summary>
     <description>The extension of the calculation discount lets choose an attribute used for the discount. For each option dropdown of the attribute it is possible to associate a range of percentages that will be visible in frontend if the attribute makes itself filterable with results.</description>
-    <notes>Fixed minor bugs</notes>
-    <authors><author><name>Antonio Loiacono Design</name><user>antonioloiaconodesign</user><email>a.loiacono@live.it</email></author></authors>
-    <date>2016-04-05</date>
-    <time>08:51:55</time>
-    <contents><target name="magecommunity"><dir name="AntonioLoiaconoDesign"><dir name="CalculateDiscount"><dir name="Block"><dir name="Config"><file name="DiscountConditions.php" hash="ea2c2594c7623d440d51daf3a3d3e210"/><dir name="Adminhtml"><dir name="Form"><dir name="Field"><file name="Discount.php" hash="04fdf4b428de3f987c282a1dde99f9d5"/></dir></dir></dir></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="CalculatediscountController.php" hash="577d106ba38fc5066b8feb447c8f35dc"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="4034f1c2ab351864c50c09ae97dca679"/><file name="config.xml" hash="941fcc01980ffcf6815f21a31e7613be"/><file name="system.xml" hash="5f5cbd88bb1964e2d5a573d6d5ffaf56"/></dir><dir name="Helper"><file name="Data.php" hash="fcdff20954c5e5f57203236d3c90b204"/></dir><dir name="Model"><file name="Observer.php" hash="1cb74ee28e30d48766e624b0c9105e7a"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="AntonioLoiaconoDesign_CalculateDiscount.xml" hash="31047778a163b19ed5c8b2bfeea2d337"/></dir></target></contents>
+    <notes>- Fix of the calculation of the discount rate: more accurate calculation.&#xD;
+- Calculation of the discount rate is removed for "Not Visible Individually&#x201D; products.</notes>
+    <authors><author><name>alditalia</name><user>alditalia</user><email>a.loiacono@live.it</email></author></authors>
+    <date>2016-05-31</date>
+    <time>09:44:46</time>
+    <contents><target name="magecommunity"><dir name="AntonioLoiaconoDesign"><dir name="CalculateDiscount"><dir name="Block"><dir name="Config"><file name="DiscountConditions.php" hash="ea2c2594c7623d440d51daf3a3d3e210"/><dir name="Adminhtml"><dir name="Form"><dir name="Field"><file name="Discount.php" hash="04fdf4b428de3f987c282a1dde99f9d5"/></dir></dir></dir></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="CalculatediscountController.php" hash="d769f6e6daa6511e2900e44da0c0245e"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="4034f1c2ab351864c50c09ae97dca679"/><file name="config.xml" hash="0225208bb8e164dee8130a6df5aa3693"/><file name="system.xml" hash="20cf733937cf47f94fcf4998fc879a4b"/></dir><dir name="Helper"><file name="Data.php" hash="fcdff20954c5e5f57203236d3c90b204"/></dir><dir name="Model"><file name="Observer.php" hash="9da3cfecb802896f9b2cb46786f8176d"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="AntonioLoiaconoDesign_CalculateDiscount.xml" hash="31047778a163b19ed5c8b2bfeea2d337"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
 </package>

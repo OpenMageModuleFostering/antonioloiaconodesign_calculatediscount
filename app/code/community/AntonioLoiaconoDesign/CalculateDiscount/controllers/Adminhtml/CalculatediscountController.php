@@ -14,10 +14,18 @@ class AntonioLoiaconoDesign_CalculateDiscount_Adminhtml_CalculatediscountControl
             $this->_getSession()->addError($this->__('Please select product(s).'));
             $this->_redirect('adminhtml/catalog_product/index');
         } else {
-            try {
-                $collection = Mage::getResourceModel('catalog/product_collection')->addFieldToFilter('entity_id', array(
-                    $productIds
-                ))->addAttributeToSelect('*');
+
+            try {		
+				$visibility = array(	
+				Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_CATALOG,
+				Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_SEARCH,
+				Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH
+				);
+			
+                $collection = Mage::getResourceModel('catalog/product_collection')
+				->addFieldToFilter('entity_id', array($productIds))
+				->addAttributeToSelect('*')
+				->addAttributeToFilter('visibility', $visibility);
                 
                 foreach ($collection as $_product) {
                     
@@ -26,7 +34,7 @@ class AntonioLoiaconoDesign_CalculateDiscount_Adminhtml_CalculatediscountControl
                     
                     if ($product->getFinalPrice() < $product->getPrice()) {
                         
-                        $discountPer        = floor(100 - ($product->getFinalPrice() / $product->getPrice()) * 100);
+						$discountPer        = round(($product->getFinalPrice() / $product->getPrice() * 100), 0, PHP_ROUND_HALF_DOWN);
                         $discountConditions = Mage::getStoreConfig('antonioloiaconodesign_calculatediscount/general/discountconditions');
                         if ($discountConditions) {
                             $discountConditions = unserialize($discountConditions);
@@ -48,7 +56,7 @@ class AntonioLoiaconoDesign_CalculateDiscount_Adminhtml_CalculatediscountControl
                                         Mage::getSingleton('catalog/product_action')->updateAttributes(array(
                                             $product->getId()
                                         ), array(
-                                            $discountAttribute => $discountOption['value']
+                                            $discountAttribute => $discountOption
                                         ), 0);
                                     }
                                     

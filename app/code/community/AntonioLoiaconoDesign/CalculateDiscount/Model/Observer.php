@@ -14,7 +14,7 @@ class AntonioLoiaconoDesign_CalculateDiscount_Model_Observer
             'label' => 'Calculate Discount',
             'confirm' => $block->__('Are you sure you want to calculates discount of the selected listing(s)?'),
             'url' => $block->getUrl('adminhtml/calculatediscount/massCalculate', array(
-                'store' => Mage::app()->getRequest()->getParam('store')
+            'store' => Mage::app()->getRequest()->getParam('store')
             ))
         ));
     }
@@ -24,9 +24,8 @@ class AntonioLoiaconoDesign_CalculateDiscount_Model_Observer
         $product           = $observer->getProduct();
         $discountAttribute = Mage::getStoreConfig('antonioloiaconodesign_calculatediscount/general/attributeofdiscount');
         
-        if ($product->getFinalPrice() < $product->getPrice()) {
-            
-            $discountPer        = floor(100 - ($product->getFinalPrice() / $product->getPrice()) * 100);
+        if ($product->getFinalPrice() < $product->getPrice() && $product->getVisibility() != Mage_Catalog_Model_Product_Visibility::VISIBILITY_NOT_VISIBLE){
+			$discountPer        = round(($product->getFinalPrice() / $product->getPrice() * 100), 0, PHP_ROUND_HALF_DOWN);
             $discountConditions = Mage::getStoreConfig('antonioloiaconodesign_calculatediscount/general/discountconditions');
             if ($discountConditions) {
                 $discountConditions = unserialize($discountConditions);
@@ -48,7 +47,7 @@ class AntonioLoiaconoDesign_CalculateDiscount_Model_Observer
                             Mage::getSingleton('catalog/product_action')->updateAttributes(array(
                                 $product->getId()
                             ), array(
-                                $discountAttribute => $discountOption['value']
+                                $discountAttribute => $discountOption
                             ), 0);
                         }
                         

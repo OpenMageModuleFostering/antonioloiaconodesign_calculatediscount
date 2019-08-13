@@ -1,20 +1,18 @@
 <?xml version="1.0"?>
 <package>
     <name>AntonioLoiaconoDesign_CalculateDiscount</name>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
     <stability>stable</stability>
     <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
     <channel>community</channel>
     <extends/>
     <summary>The extension of the calculation discount will be useful to the one who will want to obtain a filter based on the percentage of discount in the frontend.</summary>
     <description>The extension of the calculation discount lets choose an attribute used for the discount. For each option dropdown of the attribute it is possible to associate a range of percentages that will be visible in frontend if the attribute makes itself filterable with results.</description>
-    <notes>- Improved graphics in backend&#xD;
-- Add "Include product tax class for calculating discount" button&#xD;
-- Fix minor bugs for mass action</notes>
+    <notes>- Fix white product page</notes>
     <authors><author><name>alditalia</name><user>alditalia</user><email>a.loiacono@live.it</email></author></authors>
     <date>2016-06-08</date>
-    <time>10:05:25</time>
-    <contents><target name="magecommunity"><dir name="AntonioLoiaconoDesign"><dir name="CalculateDiscount"><dir name="Block"><dir name="Config"><file name="DiscountConditions.php" hash="ea2c2594c7623d440d51daf3a3d3e210"/><dir name="Adminhtml"><dir name="Form"><dir name="Field"><file name="Discount.php" hash="04fdf4b428de3f987c282a1dde99f9d5"/></dir></dir><dir name="System"><dir name="Config"><dir name="Fieldset"><file name="Appinfo.php" hash="f7da318f9068a772715abc5854693c63"/></dir></dir></dir></dir></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="CalculatediscountController.php" hash="420ea9421d2acfd076326dc7ef6b7c21"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="4034f1c2ab351864c50c09ae97dca679"/><file name="config.xml" hash="4d89a13aedadaf6fa2e9d432e1ad07c1"/><file name="system.xml" hash="4c304868f1e47c98f176cd62c84d3978"/></dir><dir name="Helper"><file name="Data.php" hash="d013701eb0402200a0d9bf391234a6b5"/></dir><dir name="Model"><file name="Observer.php" hash="be16617966b257992eb465f3de7e42a6"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="AntonioLoiaconoDesign_CalculateDiscount.xml" hash="31047778a163b19ed5c8b2bfeea2d337"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="calculatediscount"><dir name="system"><dir name="config"><dir name="fieldset"><file name="appinfo.phtml" hash="74776ccb496a96d7c9cdd4d2e2712dfa"/></dir></dir></dir></dir></dir></dir></dir></dir></target></contents>
+    <time>11:20:05</time>
+    <contents><target name="magecommunity"><dir name="AntonioLoiaconoDesign"><dir name="CalculateDiscount"><dir name="Block"><dir name="Config"><file name="DiscountConditions.php" hash="ea2c2594c7623d440d51daf3a3d3e210"/><dir name="Adminhtml"><dir name="Form"><dir name="Field"><file name="Discount.php" hash="04fdf4b428de3f987c282a1dde99f9d5"/></dir></dir><dir name="System"><dir name="Config"><dir name="Fieldset"><file name="Appinfo.php" hash="f7da318f9068a772715abc5854693c63"/></dir></dir></dir></dir></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="CalculatediscountController.php" hash="420ea9421d2acfd076326dc7ef6b7c21"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="4034f1c2ab351864c50c09ae97dca679"/><file name="config.xml" hash="a8c9d807a3c6b6f39defec8a898481c6"/><file name="system.xml" hash="4c304868f1e47c98f176cd62c84d3978"/></dir><dir name="Helper"><file name="Data.php" hash="d013701eb0402200a0d9bf391234a6b5"/></dir><dir name="Model"><file name="Observer.php" hash="be16617966b257992eb465f3de7e42a6"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="AntonioLoiaconoDesign_CalculateDiscount.xml" hash="31047778a163b19ed5c8b2bfeea2d337"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="calculatediscount"><dir name="system"><dir name="config"><dir name="fieldset"><file name="appinfo.phtml" hash="74776ccb496a96d7c9cdd4d2e2712dfa"/></dir></dir></dir></dir></dir></dir></dir></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
 </package>

@@ -23,10 +23,18 @@ class AntonioLoiaconoDesign_CalculateDiscount_Model_Observer
     {
         $product           = $observer->getProduct();
         $discountAttribute = Mage::getStoreConfig('antonioloiaconodesign_calculatediscount/general/attributeofdiscount');
-        
-        if ($product->getFinalPrice() < $product->getPrice() && $product->getVisibility() != Mage_Catalog_Model_Product_Visibility::VISIBILITY_NOT_VISIBLE){
-			$discountPer        = round(($product->getPrice() - $product->getFinalPrice()) / $product->getPrice() * 100, 0, PHP_ROUND_HALF_DOWN);
+        $Price			   = $product->getPrice();
+		$finalPrice 	       = $product->getFinalPrice();
+					
+		if (Mage::getStoreConfig('antonioloiaconodesign_calculatediscount/general/producttaxclass')) {
+			$Price			   = Mage::helper('core')->currency($product->getPrice(),true,false);
+			$finalPrice 	   = Mage::helper('core')->currency($product->getFinalPrice(),true,false);
+		}
+					
+        if ($finalPrice < $Price && $product->getVisibility() != Mage_Catalog_Model_Product_Visibility::VISIBILITY_NOT_VISIBLE){
+			$discountPer        = round(($Price - $finalPrice) / $Price * 100, 0, PHP_ROUND_HALF_DOWN);
             $discountConditions = Mage::getStoreConfig('antonioloiaconodesign_calculatediscount/general/discountconditions');
+			
             if ($discountConditions) {
                 $discountConditions = unserialize($discountConditions);
                 if (is_array($discountConditions)) {

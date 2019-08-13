@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+     <modules>
+    <AntonioLoiaconoDesign_CalculateDiscount>
+      <version>1.0.0</version>
+    </AntonioLoiaconoDesign_CalculateDiscount>
+  </modules>
+  <global>
+      <blocks>
+      <calculatediscount>
+        <class>AntonioLoiaconoDesign_CalculateDiscount_Block</class>
+      </calculatediscount>
+    </blocks>
+    <models>
+      <calculatediscount>
+        <class>AntonioLoiaconoDesign_CalculateDiscount_Model</class>
+      </calculatediscount>
+    </models>
+	   <helpers>
+      <calculatediscount>
+        <class>AntonioLoiaconoDesign_CalculateDiscount_Helper</class>
+      </calculatediscount>
+    </helpers>	
+  </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <AntonioLoiaconoDesign_CalculateDiscount before="Mage_Adminhtml">AntonioLoiaconoDesign_CalculateDiscount_Adminhtml</AntonioLoiaconoDesign_CalculateDiscount>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <events>
+            <!-- event triggered after the original massaction items are added -->
+            <adminhtml_catalog_product_grid_prepare_massaction>
+                <observers>
+                    <antonioloiaconodesign_calculatediscount_add>
+                        <type>singleton</type>
+                        <class>calculatediscount/observer</class>
+                        <method>addMassCalculate</method>
+                    </antonioloiaconodesign_calculatediscount_add>
+                </observers>
+            </adminhtml_catalog_product_grid_prepare_massaction>
+			
+			<catalog_product_save_after>
+			<observers>
+				<calculatediscount>
+					<type>singleton</type>
+					<class>calculatediscount/observer</class>
+					<method>calculateDiscountAfterProductSave</method>
+				</calculatediscount>
+			</observers>
+		</catalog_product_save_after>	
+		
+        </events>
+    </adminhtml>
+    <phpunit>
+        <suite>
+            <modules>
+                <AntonioLoiaconoDesign_CalculateDiscount/>
+            </modules>
+        </suite>
+    </phpunit>
+</config>

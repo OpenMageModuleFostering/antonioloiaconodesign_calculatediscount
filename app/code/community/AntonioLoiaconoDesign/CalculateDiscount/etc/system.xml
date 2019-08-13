@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <tabs>
+    <antonioloiaconodesign translate="label" module="calculatediscount">
+      <label>ANTONIOLOIACONODESIGN.IT</label>
+      <sort_order>100</sort_order>
+    </antonioloiaconodesign>
+  </tabs>
+  <sections>
+    <antonioloiaconodesign_calculatediscount translate="label" module="calculatediscount">
+      <label>Calculate Discount</label>
+      <tab>antonioloiaconodesign</tab>
+      <sort_order>1000</sort_order>
+      <show_in_default>1</show_in_default>
+      <show_in_website>1</show_in_website>
+      <show_in_store>1</show_in_store>
+      <groups>
+        <general translate="label" module="calculatediscount">
+          <label>General</label>
+          <frontend_type>text</frontend_type>
+          <sort_order>1000</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>1</show_in_store>
+          <fields>
+            <attributeofdiscount translate="label">
+              <label>Attribute of discount</label>
+              <comment>Write the name of the attribute used for the discount.</comment>
+              <frontend_type>text</frontend_type>
+              <sort_order>10</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </attributeofdiscount>
+            <discountconditions translate="label">
+              <label>Discount conditions</label>
+			  <comment>Before add a condition, save the attribute of discount.</comment>
+              <frontend_model>calculatediscount/config_discountConditions</frontend_model>
+              <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+              <sort_order>20</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </discountconditions>
+          </fields>
+        </general>
+      </groups>
+    </antonioloiaconodesign_calculatediscount>
+  </sections>
+</config>

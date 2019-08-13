@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+	<config>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<antonioloiaconodesign_calculatediscount translate="title" module="calculatediscount">
+											<title>AntonioLoiaconoDesign - CalculateDiscount</title>
+											<sort_order>0</sort_order>
+										</antonioloiaconodesign_calculatediscount>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</config>

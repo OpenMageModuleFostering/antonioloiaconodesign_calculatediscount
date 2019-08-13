@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+   <modules>
+      <AntonioLoiaconoDesign_CalculateDiscount>
+         <active>true</active>
+         <codePool>community</codePool>
+         <depends>
+            <Mage_Adminhtml/>
+         </depends>
+      </AntonioLoiaconoDesign_CalculateDiscount>
+   </modules>  
+</config>

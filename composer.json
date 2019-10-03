@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/AntonioLoiaconoDesign_CalculateDiscount",
+    "name": "openmage-module-fostering\/antonioloiaconodesign_calculatediscount",
     "type": "magento-module",
-    "license": "OSL-v3.0",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "The extension of the calculation discount will be useful to the one who will want to obtain a filter based on the percentage of discount in the frontend.",
     "authors": [
